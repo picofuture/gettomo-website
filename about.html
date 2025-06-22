@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Tomo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .grainy-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: radial-gradient(circle at 50% 50%, rgba(126, 8, 204, 0.05), rgba(255, 110, 78, 0.05), transparent 70%), #f9fafb;
+        }
+        .grainy-texture {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://www.transparenttextures.com/patterns/grain.png");
+            opacity: 0.15;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="grainy-background"></div>
+    <div class="grainy-texture"></div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="flex justify-between items-center py-6">
+            <div class="text-xl font-bold text-gray-900">Pico Future</div>
+            <nav>
+                <a href="index.html" class="text-gray-600 hover:text-purple-600">Home</a>
+                <a href="about.html" class="ml-6 text-purple-600 font-semibold">About</a>
+            </nav>
+        </header>
+
+        <main class="text-center">
+            <section id="origin" class="py-20 md:py-28 text-left max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center">Why I'm Building This</h2>
+                <p class="mt-8 text-lg text-gray-600 leading-relaxed">
+                    I'm Anfal — a technical founder, indie hacker, and builder. I've seen firsthand how non-technical creators struggle to finish their apps when things break.
+                    <br><br>
+                    This tool is my answer. It's not just AI — I personally use it to help you ship. As it improves, it'll become a fully autonomous debugging assistant.
+                </p>
+            </section>
+
+            <section id="trust" class="py-20 border-t border-gray-200 text-left max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center">Who I Am</h2>
+                <div class="mt-8 text-lg text-gray-600">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Over 10 years in software engineering</li>
+                        <li>Built apps, startups, and tools across web and AI</li>
+                        <li>Passionate about helping builders ship real things</li>
+                    </ul>
+                    <div class="mt-8 text-center">
+                        <a href="#" class="inline-block bg-gray-800 text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-gray-900 transition mx-2">LinkedIn</a>
+                        <a href="#" class="inline-block bg-gray-800 text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-gray-900 transition mx-2">GitHub</a>
+                        <a href="#" class="inline-block bg-gray-800 text-white font-semibold px-5 py-2 rounded-lg shadow-md hover:bg-gray-900 transition mx-2">Twitter</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="roadmap" class="py-20 border-t border-gray-200 text-left max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center">What's Next</h2>
+                 <div class="mt-8 text-lg text-gray-600">
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Week-to-week improvements to the tool</li>
+                        <li>Adding screenshot, trace, and error log support</li>
+                        <li>Goal: Fully automated debugging companion for any AI-built app</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center py-10 border-t border-gray-200 text-gray-500">
+            <p>&copy; 2025 Pico Future</p>
+            <p class="mt-2">Email: <a href="mailto:hello@yourdomain.dev" class="text-purple-600 hover:underline">hello@yourdomain.dev</a></p>
+        </footer>
+    </div>
+</body>
+</html> 

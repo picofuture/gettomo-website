@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomo - AI Debugging Tool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .grainy-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: radial-gradient(circle at 50% 50%, rgba(126, 8, 204, 0.05), rgba(255, 110, 78, 0.05), transparent 70%), #f9fafb;
+        }
+        .grainy-texture {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://www.transparenttextures.com/patterns/grain.png");
+            opacity: 0.15;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <div class="grainy-background"></div>
+    <div class="grainy-texture"></div>
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="flex justify-between items-center py-6">
+            <div class="text-xl font-bold text-gray-900">Tomo</div>
+            <nav>
+                <a href="index.html" class="text-purple-600 font-semibold">Home</a>
+                <a href="about.html" class="ml-6 text-gray-600 hover:text-purple-600">About</a>
+            </nav>
+        </header>
+
+        <main class="text-center">
+            <section id="hero" class="py-20 md:py-32">
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 flex flex-col md:flex-row items-center justify-center" style="line-height: 1.2em;">
+                    <span>Get unstuck on</span>
+                    <span class="h-[1.2em] overflow-hidden text-purple-600 md:ml-3">
+                        <span id="platform-slider" class="flex flex-col text-center md:text-left">
+                            <span class="h-[1.2em]">Lovable</span>
+                            <span class="h-[1.2em]">Bolt</span>
+                            <span class="h-[1.2em]">Replit</span>
+                        </span>
+                    </span>
+                </h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">When your vibe-coded app breaks, Tomo tells you why and how to fix it.</p>
+                <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#waitlist-cta" class="w-full sm:w-auto bg-purple-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-purple-700 transition">Join the Waitlist</a>
+                    <a href="#contact-form" class="w-full sm:w-auto text-purple-600 font-semibold">Need help right now?</a>
+                </div>
+            </section>
+
+            <section id="how-it-works" class="py-20 border-t border-gray-200">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">How Tomo Works</h2>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                    <div class="feature">
+                        <img src="assets/connect-tomo-to-your-app.svg" alt="Illustration showing an API connection" class="h-48 mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Connect Your App</h3>
+                        <p class="mt-2 text-gray-600">Connect Tomo at the start of your project. The AI learns your codebase as you build, so it's always ready to help when you get stuck.</p>
+                    </div>
+                    <div class="feature">
+                        <img src="assets/talk-to-tomo.svg" alt="Illustration of a person chatting with a bot" class="h-48 mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Talk Through the Issue</h3>
+                        <p class="mt-2 text-gray-600">When you get stuck, just describe the problem to Tomo in plain English through a simple chat interface.</p>
+                    </div>
+                    <div class="feature">
+                        <img src="assets/get-detailed-analysis.svg" alt="Illustration of a report with charts and graphs" class="h-48 mx-auto mb-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Get a Clear Fix</h3>
+                        <p class="mt-2 text-gray-600">Tomo pinpoints the root cause, explains the 'why' in simple terms, and provides a clear, step-by-step fix.</p>
+                    </div>
+                </div>
+                <div class="mt-20">
+                    <h3 class="text-2xl font-bold text-gray-900">See it in action</h3>
+                    <div class="mt-6 aspect-video bg-gray-200 rounded-lg max-w-3xl mx-auto flex items-center justify-center">
+                        <p class="text-gray-500">Video demo coming soon.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="waitlist-cta" class="py-20 bg-white border-t border-gray-200">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Join the Waitlist</h2>
+                 <form id="waitlist-form" class="mt-8 max-w-lg mx-auto text-left flex flex-col gap-4">
+                    <input type="text" name="name" placeholder="Name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500">
+                    <input type="email" name="email" placeholder="Email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500">
+                    <input type="text" name="platform" placeholder="Platform used (Lovable, Bolt, etc.)" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500">
+                    <label class="flex items-center gap-3 text-gray-600">
+                        <input type="checkbox" name="updates" class="h-4 w-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500">
+                        Send me email updates
+                    </label>
+                    <button type="submit" class="w-full bg-purple-600 text-white font-semibold py-3 rounded-lg shadow-md hover:bg-purple-700 transition">Join</button>
+                </form>
+            </section>
+
+            <section id="contact" class="py-20 border-t border-gray-200">
+                <form id="contact-form" class="max-w-lg mx-auto text-left flex flex-col gap-4">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center">Contact Us</h2>
+                    <input type="email" name="contact-email" placeholder="Email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500">
+                    <input type="url" name="project-link" placeholder="Project/app link" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500">
+                    <textarea name="problem" placeholder="Problem description" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"></textarea>
+                    <label class="flex items-center gap-3 text-gray-600">
+                        <input type="checkbox" name="agreement" required class="h-4 w-4 text-purple-600 border-gray-300 rounded focus:ring-purple-500">
+                        I agree to pay $20 if selected. Full refund if unresolved.
+                    </label>
+                    <button type="submit" class="w-full bg-gray-800 text-white font-semibold py-3 rounded-lg shadow-md hover:bg-gray-900 transition">Submit Issue</button>
+                </form>
+            </section>
+        </main>
+
+        <footer class="text-center py-10 border-t border-gray-200 text-gray-500">
+            <p>&copy; 2025 Pico Future</p>
+            <p class="mt-2">Email: <a href="mailto:anfal@picofuture.com" class="text-purple-600 hover:underline">anfal@picofuture.com</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slider = document.getElementById('platform-slider');
+            const itemCount = slider.children.length;
+            let currentIndex = 0;
+
+            const firstItemClone = slider.children[0].cloneNode(true);
+            slider.appendChild(firstItemClone);
+
+            setInterval(() => {
+                currentIndex++;
+                slider.style.transform = `translateY(-${currentIndex * 1.2}em)`;
+                slider.style.transition = 'transform 0.4s cubic-bezier(0.7, 0, 0.3, 1)';
+
+                if (currentIndex === itemCount) {
+                    setTimeout(() => {
+                        slider.style.transition = 'none';
+                        slider.style.transform = 'translateY(0)';
+                        currentIndex = 0;
+                    }, 400);
+                }
+            }, 2000);
+        });
+    </script>
+</body>
+</html> 
