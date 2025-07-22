@@ -53,25 +53,33 @@
     <div class="grainy-background"></div>
     <div class="grainy-texture"></div>
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <header class="flex justify-between items-center py-6">
+        <header class="flex justify-between items-center py-4 sm:py-6 relative">
             <a href="/" class="flex items-center space-x-2">
-                <img src="assets/logo.png" alt="Tomo Logo" class="h-16 w-16">
-                <span class="text-xl font-bold text-gray-900">Tomo</span>
+                <img src="assets/logo.png" alt="Tomo Logo" class="h-12 w-12 sm:h-16 sm:w-16">
+                <span class="text-lg sm:text-xl font-bold text-gray-900">Tomo</span>
             </a>
-            <nav>
-                <a href="/" class="text-gray-600 hover:text-purple-600">Home</a>
-                <a href="/about" class="ml-6 text-purple-600 font-semibold">About</a>
-                <a href="/updates" class="ml-6 text-gray-600 hover:text-purple-600">Updates</a>
+            <nav id="mobile-menu" class="hidden sm:flex flex-col sm:flex-row items-stretch sm:items-center gap-0 sm:gap-6 absolute sm:relative top-full sm:top-auto left-0 sm:left-auto right-0 sm:right-auto bg-white sm:bg-transparent border-t sm:border-t-0 border-gray-200 sm:border-t-0 py-0 sm:py-0 shadow-lg sm:shadow-none z-50 rounded-b-lg sm:rounded-none w-full sm:w-auto">
+                <a href="/" class="text-gray-600 hover:text-purple-600 w-full sm:w-auto text-center sm:text-left py-4 sm:py-0 border-b sm:border-b-0 border-gray-100 sm:border-b-0 block sm:inline">Home</a>
+                <a href="/about" class="text-purple-600 font-semibold w-full sm:w-auto text-center sm:text-left py-4 sm:py-0 border-b sm:border-b-0 border-gray-100 sm:border-b-0 block sm:inline">About</a>
+                <a href="/updates" class="text-gray-600 hover:text-purple-600 w-full sm:w-auto text-center sm:text-left py-4 sm:py-0 block sm:inline">Updates</a>
             </nav>
+            <button id="mobile-menu-toggle" class="sm:hidden flex items-center justify-center w-8 h-8 text-gray-600 hover:text-purple-600 focus:outline-none transition-transform duration-200">
+                <svg id="hamburger-icon" class="w-6 h-6 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg id="close-icon" class="w-6 h-6 transition-all duration-200 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
         </header>
 
         <main class="text-center">
-            <section id="trust" class="py-20 md:py-28 text-left max-w-3xl mx-auto">
-                <div class="w-56 h-56 rounded-full bg-gray-300 mx-auto mb-6">
-                    <img src="assets/dp.jpg" alt="Anfal" class="w-56 h-56 rounded-full object-cover">
+            <section id="trust" class="py-12 sm:py-20 md:py-28 text-left max-w-3xl mx-auto">
+                <div class="w-40 h-40 sm:w-56 sm:h-56 rounded-full bg-gray-300 mx-auto mb-6">
+                    <img src="assets/dp.jpg" alt="Anfal" class="w-40 h-40 sm:w-56 sm:h-56 rounded-full object-cover">
                 </div>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center">Who I Am</h2>
-                <div class="mt-8 text-lg text-gray-600 leading-relaxed">
+                <div class="mt-6 sm:mt-8 text-base sm:text-lg text-gray-600 leading-relaxed">
                     <p>
                         I'm Anfal, a technical founder and indie hacker. I've spent the last decade building scalable apps and AI tools from scratch.
                     </p>
@@ -85,7 +93,7 @@
                         I believe AI has changed the game, but it breaks just as often as it helps. I am building Tomo to bridge that last 20% of your vibe-coding journey and help you ship like a professional software engineer.
                     </p>
                 </div>
-                <div class="mt-8 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4">
                     <a href="https://www.linkedin.com/in/anfalmushtaq/" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex items-center justify-center bg-gray-800 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-gray-900 transition">
                         <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         LinkedIn
@@ -101,9 +109,9 @@
                 </div>
             </section>
 
-            <section id="what-is-tomo" class="py-20 md:py-28 text-left max-w-3xl mx-auto">
+            <section id="what-is-tomo" class="py-12 sm:py-20 md:py-28 text-left max-w-3xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center">What is Tomo?</h2>
-                <div class="mt-8 text-lg text-gray-600 leading-relaxed">
+                <div class="mt-6 sm:mt-8 text-base sm:text-lg text-gray-600 leading-relaxed">
                     <p>
                         Tomo started from real conversations with vibe coders, builders hitting roadblocks when AI-generated code failed silently.
                     </p>
@@ -137,5 +145,39 @@
             </div>
         </footer>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const closeIcon = document.getElementById('close-icon');
+
+            console.log('Mobile menu elements:', { mobileMenuToggle, mobileMenu, hamburgerIcon, closeIcon });
+
+            if (mobileMenuToggle && mobileMenu && hamburgerIcon && closeIcon) {
+                mobileMenuToggle.addEventListener('click', function() {
+                    console.log('Mobile menu toggle clicked');
+                    const isOpen = !mobileMenu.classList.contains('hidden');
+                    console.log('Menu is open:', isOpen);
+                    
+                    if (isOpen) {
+                        // Closing menu
+                        mobileMenu.classList.add('hidden');
+                        hamburgerIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                        console.log('Menu closed');
+                    } else {
+                        // Opening menu
+                        mobileMenu.classList.remove('hidden');
+                        hamburgerIcon.classList.add('hidden');
+                        closeIcon.classList.remove('hidden');
+                        console.log('Menu opened');
+                    }
+                });
+            } else {
+                console.error('Some mobile menu elements not found');
+            }
+        });
+    </script>
 </body>
 </html> 

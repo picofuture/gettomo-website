@@ -56,100 +56,108 @@
     <div class="grainy-background"></div>
     <div class="grainy-texture"></div>
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <header class="flex justify-between items-center py-6">
+        <header class="flex justify-between items-center py-4 sm:py-6 relative">
             <a href="/" class="flex items-center space-x-2">
-                <img src="assets/logo.png" alt="Tomo Logo" class="h-16 w-16">
-                <span class="text-xl font-bold text-gray-900">Tomo</span>
+                <img src="assets/logo.png" alt="Tomo Logo" class="h-12 w-12 sm:h-16 sm:w-16">
+                <span class="text-lg sm:text-xl font-bold text-gray-900">Tomo</span>
             </a>
-            <nav>
-                <a href="/" class="text-purple-600 font-semibold">Home</a>
-                <a href="/about" class="ml-6 text-gray-600 hover:text-purple-600">About</a>
-                <a href="/updates" class="ml-6 text-gray-600 hover:text-purple-600">Updates</a>
+            <nav id="mobile-menu" class="hidden sm:flex flex-col sm:flex-row items-stretch sm:items-center gap-0 sm:gap-6 absolute sm:relative top-full sm:top-auto left-0 sm:left-auto right-0 sm:right-auto bg-white sm:bg-transparent border-t sm:border-t-0 border-gray-200 sm:border-t-0 py-0 sm:py-0 shadow-lg sm:shadow-none z-50 rounded-b-lg sm:rounded-none w-full sm:w-auto">
+                <a href="/" class="text-purple-600 font-semibold w-full sm:w-auto text-center sm:text-left py-4 sm:py-0 border-b sm:border-b-0 border-gray-100 sm:border-b-0 block sm:inline">Home</a>
+                <a href="/about" class="text-gray-600 hover:text-purple-600 w-full sm:w-auto text-center sm:text-left py-4 sm:py-0 border-b sm:border-b-0 border-gray-100 sm:border-b-0 block sm:inline">About</a>
+                <a href="/updates" class="text-gray-600 hover:text-purple-600 w-full sm:w-auto text-center sm:text-left py-4 sm:py-0 block sm:inline">Updates</a>
             </nav>
+            <button id="mobile-menu-toggle" class="sm:hidden flex items-center justify-center w-8 h-8 text-gray-600 hover:text-purple-600 focus:outline-none transition-transform duration-200">
+                <svg id="hamburger-icon" class="w-6 h-6 transition-all duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg id="close-icon" class="w-6 h-6 transition-all duration-200 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
         </header>
 
         <main class="text-center">
-            <section id="hero" class="py-20 md:py-32">
-                <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 flex flex-col md:flex-row items-center justify-center" style="line-height: 1.2em;">
+            <section id="hero" class="py-12 sm:py-20 md:py-32">
+                <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight text-gray-900 flex flex-col md:flex-row items-center justify-center" style="line-height: 1.2em;">
                     AI Debugging Assistant for Vibe Coders
                 </h1>
-                <p class="mt-4 text-md md:text-lg text-gray-600 max-w-2xl mx-auto">
-                    Tomo watches your app, monitors failures, and explains bugs; so you don’t need a dev on speed dial.
+                <p class="mt-4 text-base sm:text-md md:text-lg text-gray-600 max-w-2xl mx-auto">
+                    Tomo watches your app, monitors failures, and explains bugs; so you don't need a dev on speed dial.
                 </p>
-                <div class="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+                <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
                     <a href="#waitlist-cta" class="w-full sm:w-auto bg-purple-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-purple-700 transition">Join the Waitlist</a>
                     <a href="#see-it-in-action" class="w-full sm:w-auto text-purple-600 font-semibold">Watch Demo</a>
                 </div>
             </section>
 
-            <section id="see-it-in-action" class="py-20  border-t border-gray-200">
+            <section id="see-it-in-action" class="py-12 sm:py-20 border-t border-gray-200">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900">See it in action</h2>
-                <div class="mt-6 max-w-3xl mx-auto rounded-lg overflow-hidden" style="background: none;">
+                <div class="mt-4 sm:mt-6 max-w-3xl mx-auto rounded-lg overflow-hidden" style="background: none;">
                     <div style="position: relative; padding-bottom: 41.86046511627907%; height: 0;">
                         <iframe src="https://www.loom.com/embed/1dc42ec7f8cf41f083b9aa9bfb91be80?sid=f0f60020-084c-4dd2-b609-6f2951a58102" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
                     </div>
                 </div>
             </section>
 
-            <section id="works-with" class="py-12 border-t border-gray-200">
-                <div class="max-w-4xl mx-auto">
-                    <p class="text-sm font-medium text-gray-500 mb-8">Works with</p>
-                    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-70">
+            <section id="works-with" class="py-8 sm:py-12 border-t border-gray-200">
+                <div class="max-w-4xl mx-auto px-4">
+                    <p class="text-sm font-medium text-gray-500 mb-6 sm:mb-8">Works with</p>
+                    <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-12 opacity-70">
                         <div class="flex items-center space-x-2">
-                            <img src="assets/platform-icons/cursor.svg" alt="Cursor" class="w-6 h-6">
-                            <span class="text-gray-700 font-medium">Cursor</span>
+                            <img src="assets/platform-icons/cursor.svg" alt="Cursor" class="w-5 h-5 sm:w-6 sm:h-6">
+                            <span class="text-gray-700 font-medium text-sm sm:text-base">Cursor</span>
                         </div>
                         <div class="flex items-center space-x-2">
-                            <img src="assets/platform-icons/supabase-logo-icon.png" alt="Supabase" class="w-6 h-6">
-                            <span class="text-gray-700 font-medium">Supabase</span>
+                            <img src="assets/platform-icons/supabase-logo-icon.png" alt="Supabase" class="w-5 h-5 sm:w-6 sm:h-6">
+                            <span class="text-gray-700 font-medium text-sm sm:text-base">Supabase</span>
                         </div>
                         <div class="flex items-center space-x-2">
-                            <img src="assets/platform-icons/replit-color.svg" alt="Replit" class="w-6 h-6">
-                            <span class="text-gray-700 font-medium">Replit</span>
+                            <img src="assets/platform-icons/replit-color.svg" alt="Replit" class="w-5 h-5 sm:w-6 sm:h-6">
+                            <span class="text-gray-700 font-medium text-sm sm:text-base">Replit</span>
                         </div>
                         <div class="flex items-center space-x-2">
-                            <img src="assets/platform-icons/lovable-logo-icon.svg" alt="Lovable" class="w-6 h-6">
-                            <span class="text-gray-700 font-medium">Lovable</span>
+                            <img src="assets/platform-icons/lovable-logo-icon.svg" alt="Lovable" class="w-5 h-5 sm:w-6 sm:h-6">
+                            <span class="text-gray-700 font-medium text-sm sm:text-base">Lovable</span>
                         </div>
                         <div class="flex items-center space-x-2">
-                            <img src="assets/platform-icons/nodejs.svg" alt="Node.js" class="w-6 h-6">
-                            <span class="text-gray-700 font-medium">Node.js</span>
+                            <img src="assets/platform-icons/nodejs.svg" alt="Node.js" class="w-5 h-5 sm:w-6 sm:h-6">
+                            <span class="text-gray-700 font-medium text-sm sm:text-base">Node.js</span>
                         </div>
                     </div>
-                    <p class="mt-6 text-sm text-gray-500 italic">Or anything else. Tomo adapts to your stack.</p>
+                    <p class="mt-4 sm:mt-6 text-sm text-gray-500 italic">Or anything else. Tomo adapts to your stack.</p>
                 </div>
             </section>
 
-            <section id="how-it-works" class="py-20 border-t border-gray-200">
+            <section id="how-it-works" class="py-12 sm:py-20 border-t border-gray-200">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900">How Tomo Works</h2>
-                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                <div class="mt-8 sm:mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 text-center">
                     <div class="feature">
-                        <img src="assets/connect-tomo-to-your-app.svg" alt="Illustration showing an API connection" class="h-48 mx-auto mb-4">
-                        <h3 class="text-xl font-semibold text-gray-900">Connect Your App</h3>
-                        <p class="mt-2 text-gray-600">Tomo connects with your app and monitors its activity. It builds a picture of your app over time.</p>                        </p>
+                        <img src="assets/connect-tomo-to-your-app.svg" alt="Illustration showing an API connection" class="h-32 sm:h-48 mx-auto mb-4">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900">Connect Your App</h3>
+                        <p class="mt-2 text-gray-600 text-sm sm:text-base">Tomo connects with your app and monitors its activity. It builds a picture of your app over time.</p>
                     </div>
                     <div class="feature">
-                        <img src="assets/talk-to-tomo.svg" alt="Illustration of a person chatting with a bot" class="h-48 mx-auto mb-4">
-                        <h3 class="text-xl font-semibold text-gray-900">Chat with Tomo</h3>
-                        <p class="mt-2 text-gray-600">Stuck on a bug? Just talk to Tomo. It understands your issue and shows you exactly what broke.</p>
+                        <img src="assets/talk-to-tomo.svg" alt="Illustration of a person chatting with a bot" class="h-32 sm:h-48 mx-auto mb-4">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900">Chat with Tomo</h3>
+                        <p class="mt-2 text-gray-600 text-sm sm:text-base">Stuck on a bug? Just talk to Tomo. It understands your issue and shows you exactly what broke.</p>
                     </div>
                     <div class="feature">
-                        <img src="assets/get-detailed-analysis.svg" alt="Illustration of a report with charts and graphs" class="h-48 mx-auto mb-4">
-                        <h3 class="text-xl font-semibold text-gray-900">Get a Clear Fix</h3>
-                        <p class="mt-2 text-gray-600">Tomo uses live app data and code context to trace the root cause; then shows you how to fix it.</p>
+                        <img src="assets/get-detailed-analysis.svg" alt="Illustration of a report with charts and graphs" class="h-32 sm:h-48 mx-auto mb-4">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900">Get a Clear Fix</h3>
+                        <p class="mt-2 text-gray-600 text-sm sm:text-base">Tomo uses live app data and code context to trace the root cause; then shows you how to fix it.</p>
                     </div>
                 </div>
             </section>
 
-            <section id="why-tomo" class="py-20 border-t border-gray-200">
+            <section id="why-tomo" class="py-12 sm:py-20 border-t border-gray-200">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Why Tomo</h2>
-                <p class="mt-6 text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">Tomo makes fixing your app easy and fast, unlike other AI tools, whether you’re building or it’s live.</p>
-                <div class="mt-10 flex justify-center">
-                    <div class="w-full max-w-4xl mx-auto">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                                <h3 class="text-lg font-semibold text-gray-900 mb-4 text-center">Without Tomo</h3>
-                                <div class="space-y-4">
+                <p class="mt-4 sm:mt-6 text-lg md:text-xl text-gray-700 max-w-2xl mx-auto">Tomo makes fixing your app easy and fast, unlike other AI tools, whether you're building or it's live.</p>
+                <div class="mt-8 sm:mt-10 flex justify-center">
+                    <div class="w-full max-w-4xl mx-auto px-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                            <div class="bg-white rounded-xl p-4 sm:p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 sm:mb-4 text-center">Without Tomo</h3>
+                                <div class="space-y-3 sm:space-y-4">
                                     <div class="flex items-start space-x-3">
                                         <div class="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
                                         <p class="text-gray-600 text-sm leading-relaxed">"App is broken but there's no error."</p>
@@ -164,9 +172,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 shadow-sm border border-purple-200">
-                                <h3 class="text-lg font-semibold text-purple-900 mb-4 text-center">With Tomo</h3>
-                                <div class="space-y-4">
+                            <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-4 sm:p-6 shadow-sm border border-purple-200">
+                                <h3 class="text-lg font-semibold text-purple-900 mb-3 sm:mb-4 text-center">With Tomo</h3>
+                                <div class="space-y-3 sm:space-y-4">
                                     <div class="flex items-start space-x-3">
                                         <div class="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
                                         <p class="text-gray-900 text-sm leading-relaxed font-medium">"Tomo explains what broke, where, and why."</p>
@@ -183,7 +191,7 @@
                             </div>
                         </div>
                     </div>
-                </div>                
+                </div>
             </section>
 
             <section id="waitlist-cta" class="py-20 bg-white border-t border-gray-200">
@@ -250,26 +258,37 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const slider = document.getElementById('platform-slider');
-            const itemCount = slider.children.length;
-            let currentIndex = 0;
+            // Mobile menu functionality
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const closeIcon = document.getElementById('close-icon');
 
-            const firstItemClone = slider.children[0].cloneNode(true);
-            slider.appendChild(firstItemClone);
+            console.log('Mobile menu elements:', { mobileMenuToggle, mobileMenu, hamburgerIcon, closeIcon });
 
-            setInterval(() => {
-                currentIndex++;
-                slider.style.transform = `translateY(-${currentIndex * 1.2}em)`;
-                slider.style.transition = 'transform 0.4s cubic-bezier(0.7, 0, 0.3, 1)';
-
-                if (currentIndex === itemCount) {
-                    setTimeout(() => {
-                        slider.style.transition = 'none';
-                        slider.style.transform = 'translateY(0)';
-                        currentIndex = 0;
-                    }, 400);
-                }
-            }, 2000);
+            if (mobileMenuToggle && mobileMenu && hamburgerIcon && closeIcon) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    console.log('Mobile menu toggle clicked');
+                    const isOpen = !mobileMenu.classList.contains('hidden');
+                    console.log('Menu is open:', isOpen);
+                    
+                    if (isOpen) {
+                        // Closing menu
+                        mobileMenu.classList.add('hidden');
+                        hamburgerIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                        console.log('Menu closed');
+                    } else {
+                        // Opening menu
+                        mobileMenu.classList.remove('hidden');
+                        hamburgerIcon.classList.add('hidden');
+                        closeIcon.classList.remove('hidden');
+                        console.log('Menu opened');
+                    }
+                });
+            } else {
+                console.error('Some mobile menu elements not found');
+            }
         });
     </script>
 </body>
